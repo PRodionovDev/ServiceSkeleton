@@ -17,3 +17,12 @@ up:
 
 down:
 	docker-compose down --remove-orphans
+
+diff:
+	docker exec -it php-container php bin/console --no-interaction doctrine:migrations:diff
+
+migrate:
+	docker exec -it php-container php bin/console --no-interaction doctrine:migrations:migrate
+
+clear:
+	docker exec -it php-container php bin/console --no-interaction cache:clear
